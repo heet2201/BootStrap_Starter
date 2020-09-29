@@ -73,3 +73,22 @@ body{
     position: absolute;
     bottom: 0px;
 }
+
+.modal {
+    .modal-header {
+        color: white;
+        background-color: $background-dark;
+
+        .close {
+            color: $lt-gray;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    .modal-body {
+        background-color: $background-pale;
+    }
+}

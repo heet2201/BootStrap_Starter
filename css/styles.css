@@ -25,8 +25,8 @@
 
 .address{
 	font-size: 70%;
-	//margin: 0px;
 	color: black;
+	//margin: 0px;
 }
 
 body{
@@ -62,4 +62,21 @@ body{
 	position: absolute;
 	bottom: 0px;
 	z-index: 1;
+}
+
+.modal-header {
+	color: white;
+	background-color: #512DA8;
+}
+
+.modal-body {
+	background-color: #D1C4E9;
+}
+
+.close {
+	color: #ddd;
+}
+
+.close:hover {
+	color: white;
 }

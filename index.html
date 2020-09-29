@@ -39,9 +39,12 @@
                 </ul>
 
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="LoginButton">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
+                    <!--<a data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span> Login
+                    </a>-->
                 </span>
             </div>
         </div>
@@ -52,7 +55,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <!--<button type="button" class="close" data-dismiss="modal">-->
+                    <button type="button" class="close" id="LoginClose">
                         &times;
                     </button>
                 </div>
@@ -77,7 +81,8 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <!--<button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>-->
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="LoginCloseButton">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -102,7 +107,8 @@
                     title="Or Call us at <br><strong>+9984787893</strong>"
                     data-placement="bottom" href="#ReserveForm">Reserve Table</a>-->
 
-                    <a role="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#Reserve">Reserve Table</a>
+                    <!--<a role="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#Reserve">Reserve Table</a>-->
+                    <a role="button" class="btn btn-warning btn-block" id="ReserveButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -113,7 +119,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <!--<button type="button" class="close" data-dismiss="modal">-->
+                    <button type="button" class="close" id="ReserveClose">
                         &times;
                     </button>
                 </div>
@@ -183,7 +190,8 @@
 
                         <div class="form-group row">
                             <div class="col-12 offset-md-3">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">-->
+                                <button type="button" class="btn btn-secondary" id="ReserveCloseButton">
                                     Cancel
                                 </button>
                                 <button type="submit" class="btn btn-primary">
@@ -443,7 +451,29 @@
                 }
             });
 
+            $('#LoginButton').click(function() {
+                $('#loginModal').modal('toggle');
+            });
 
+            $('#LoginClose').click(function() {
+                $('#loginModal').modal('hide');
+            });
+
+            $('#LoginCloseButton').click(function() {
+                $('#loginModal').modal('hide');
+            });
+
+            $('#ReserveButton').click(function() {
+                $('#Reserve').modal('toggle');
+            });
+
+            $('#ReserveClose').click(function() {
+                $('#Reserve').modal('hide');
+            });
+
+            $('#ReserveCloseButton').click(function() {
+                $('#Reserve').modal('hide');
+            });
         });
     </script>
     <!--
