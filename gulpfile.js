@@ -4,7 +4,9 @@ const { sync } = require('gulp-sass');
 
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    browerSync = require('browser-sync');
+    browerSync = require('browser-sync'),
+    del = require('del'),
+    imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync');
 
 gulp.task('sass', function() {
@@ -35,3 +37,23 @@ gulp.task('browser-sync', function() {
 gulp.task('default', gulp.series('browser-sync', function() {
     gulp.start('sass:watch');
 }));
+
+gulp.task('clean', function() {
+    return del(['dist']);
+});
+
+gulp.task('copyfonts', function() {
+    gulp.src('./node_modules/font-awesome/fonts/**/*.{ttf,woff,eof, svg}*')
+    .pipe(gulp.dest('./dest/fonts'));
+});
+
+gulp.task('imagemin', function() {
+    return gulp.src('img/*.{png,jpg,gif}')
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true}))
+    .pipe(gulp.dest('dest/img'));
+});
+
+gulp.task('build', gulp.series('clean'), function() {
+    gulp.start(gulp.parallel('copyfiles','imagemin'));
+});
+
